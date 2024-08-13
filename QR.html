@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <title>QrGenerator</title>
+   <link rel="stylesheet" href="QR.css">
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+
+
+
+
+
+<body>
+
+
+   <div class="container">
+      <img src="https://via.placeholder.com/150" alt="qr">
+      <input type="text" placeholder="Your text or link">
+      <button><b>GENERATE</b></button>
+   </div>
+
+
+   <script>
+      $(document).ready(function(){
+         var content = $("input").val();
+         $("button").click(function(){
+            content = $("input").val();
+            var qrCode = "https://api.qrserver.com/v1/create-qr-code/";
+            $("img").attr("src", qrCode + "?size=500x500p&data=" + content);
+         });
+      });
+   </script>
+
+
+</body>
+</html>
